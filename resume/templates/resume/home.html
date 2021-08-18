@@ -1,0 +1,126 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Peter's Resume</title>
+  </head>
+  
+  
+  <body>
+      <div class="container pt-5">        
+        <img src="{% static 'IMG_7954.jpg' %}" class="img-fluid float-left rounded" width="250" height="236">
+        <img src="{% static 'HNG.png' %}" class="img-fluid float-end rounded" width="350" height="300">
+        <h1 style="text-align:center; color:rgb(53, 55, 68)"><b>Ebueku Uyiosa Peter</b></h1><hr>
+        <p style="text-align: center;">Ikeja, Lagos • pebueku@gmail.com • 
+          <a target="_blank" href="https://github.com/pebueku">github.com/pebueku</a></p>
+      </div>
+      <div class="container pt-5">
+        <h3 class="heading"><b>Professional Summary</b></h3><hr>
+        <div class="container">
+          Reliable, energetic and a resourceful, eager to learn and produce results. 
+          Ability to cultivate key <br>client relationships. 
+          excellent communicator and a compelling relationship builder, 
+          committed to <br>sparking team synergy and work well in a team environment.
+        </div>
+      </div>
+      
+      <div class="container pt-5">
+        <h3 class="heading"><b>Education</b></h3><hr>
+        <div class="container">
+          <dl>
+            <dt>Chrisland High School Ikeja</dt>
+            <dd>- September 2012 – July 2018: Achieved 4 A’s in: 
+              Mathematics, Further Mathematics, Technical Drawing, Civic Education </dd>
+            <dt>Bachelor of Science - Computer Science</dt>
+            <dd>- Covenant University, Nigeria.   
+              Expected Graduation – June 2022</dd>
+          </dl>
+        </div>
+      </div>
+    
+      <div class="container pt-5">
+        <h3 class="heading"><b>Projects</b></h3><hr>
+        <div class="container">
+            <dt>Covenant University Lecturer Bot</dt>
+            <dd>- A simple Telegram bot that replies lecturers contact information; 
+              Implemented using Python, Beautiful Soup and python-telegram-bot API</dd>
+            <dt>Moodle Form Filler</dt>
+            <dd>- A python script that fills course evaluation 
+              form on the Moodle Platform with Selenium library</dd>
+        </div>
+      </div>
+
+      <div class="container pt-5">
+        <h3 class="heading"><b>Trainings Attended</b></h3><hr>
+        <div class="container">
+          <dl>
+            <dt>Skill-up Master Class 2021(DATA-SCIENCE)</dt>
+            <dd>Attended and completed the Skill-Up Masterclass Bootcamp, the Data-Science track, hosted by the Covenant University Hebron Startup-Lab</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="container pt-5">
+        <h3 class="heading"><b>Work Experience</b></h3><hr>
+        <div class="container">
+          <dl>
+            <dt>Mar & Mor Engineering Services</dt>
+            <dd>- IT Support Technician at Mar&Mor Engineering Services Ltd || Currently here</dd>
+          </dl>
+        </div>
+      </div>
+      
+      <div  class="container pt-5">
+        <h3 class="heading" style="text-align: center;">Links</h3><hr>
+        <div class="container">
+          <p class="link"><a href="https://zuri.team/" target="_blank">- Zuri Team</a></p>
+          <p class="link"><a href="https://www.linkedin.com/in/pebueku/" target="_blank">- LinkedIn</a></p>
+
+        </div>
+      </div>
+
+      <div class="container pt-5">
+        <h4 style="text-align:left; color:rgb(53, 55, 68)"><b>Reach Out!</b></h4><hr style="width:50%;text-align:left;margin-left:0; height:5px; background-color:black;">
+        <form action="{% url 'send-mail' %}" method="POST">{% csrf_token %}
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" required minlength="3" maxlength="30" id="name" class="form-control" placeholder="Name" aria-describedby="nameId">
+            <small id="nameHelp" class="text-muted">eg: John Doe</small>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" required id="email" class="form-control" placeholder="Email Address" aria-describedby="emailId">
+            <small id="emailId" class="text-muted">eg: johndoe@gmail.com</small>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" class="form-control" required minlength="3" maxlength="30" placeholder="Subject" aria-describedby="subjectHelp">
+            <small id="subjectHelp" class="text-muted">eg: Job Hire</small>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" id="phone" class="form-control" required minlength="3" maxlength="11" placeholder="Phone number" aria-describedby="phonetHelp">
+            <small id="phoneHelp" class="text-muted">eg: 08112312345</small>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" name="message" id="message" required minlength="3" maxlength="200" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form> 
+      </div>
+
+      <div class="container pt-5">
+        
+      </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
