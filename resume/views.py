@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
 def home(request):
-    return render(request, 'resume\home.html')
+    return render(request, 'resume/home.html')
 
 def send_gmail(request):
     if request.method=='POST':
