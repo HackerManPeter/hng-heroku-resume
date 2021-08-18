@@ -28,7 +28,7 @@ def send_gmail(request):
 
 
         reply_subject = 'Thanks for reaching out!'
-        reply_message = f'Goodday {name.title()},\nThank you for reaching out, I\'ll be sure to get back to you soon.'
+        reply_message = f'Good day {name.title()},\nThank you for reaching out, I\'ll be sure to get back to you soon.'
 
         send_mail(
             reply_subject,
